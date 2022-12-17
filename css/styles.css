@@ -246,13 +246,7 @@ body {
     border: none;
 }
 
-.zero {
-    transform: scaleX(1);
-}
 
-.zero:hover {
-    transform: scaleX(1);
-}
 /* ГОЛОВНА  end */
 
 
@@ -710,11 +704,10 @@ button {
 }
 
 .list-card > .item {
-    position: relative;
+    
     flex-basis: calc((100%  - 60px) / 3);
     background: #FFFFFF;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1); 
-    overflow: hidden;   
 }
 
 .item:hover {
@@ -752,21 +745,65 @@ button {
     color: var(--brand-color-description);
 }
 
-.card-overlay {
+/*  З псевдокласом
+
+.card-tumb {
+    position: relative;
+    overflow: hidden;
+
+    font-size: 18px;
+    line-height: 1.55;
+    letter-spacing: 0.03em;
+    color: var(--brand-color-hero);
+
+}
+
+
+.card-tumb::before {
+    display: inline-block;
     position: absolute;
+    content: "Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.";
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
+    padding: 63px 24px;
+    background-color: rgba(33, 150, 243, 0.9);
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.item:hover .card-tumb::before {
+    transform: translateY(0);
+}
+*/
+
+.cards-tumb {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.cards-desc {
+    position: absolute;
+    font-size: 18px;
+    line-height: 1.55;
+    letter-spacing: 0.03em;
+    color: var(--brand-color-hero);
+    margin-top: 0;
+    margin-bottom: 0;
+    top: 0;
+    left: 0;
+    width: 370px;
     height: 294px;
     padding: 63px 24px;
     background-color: rgba(33, 150, 243, 0.9);
     transform: translateY(100%);
-    transition: transform;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.item:hover .card-overlay {
+.item:hover .cards-desc {
     transform: translateY(0);
-    transition: ;
 }
 
 
@@ -797,6 +834,8 @@ button {
     transform: translate(-50%, -50%);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    scale: 1;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-button {
